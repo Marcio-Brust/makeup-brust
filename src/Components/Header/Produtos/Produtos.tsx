@@ -1,12 +1,15 @@
+import { ProductContext } from "../../../Context/ContextProduct";
 import { useFetch } from "../../../Ultils/Hooks/useFetch";
+import { useContext } from "react";
 
 export const Produtos = () => {
   const { data, isError, isLoading, error } = useFetch();
 
-  const typeProduct = data
+  const { setTypeProdutct } = useContext(ProductContext);
+
+  const typeProductFilter = data
     ?.map((product) => product.product_type)
     .filter((product, index, self) => self.indexOf(product) === index);
-  console.log(typeProduct);
 
   if (isLoading) {
     return <div>Loading</div>;
@@ -17,29 +20,34 @@ export const Produtos = () => {
 
   return (
     <>
-      {typeProduct?.map((typeProduct) => (
-        <p key={typeProduct}>
-          {typeProduct === "lip_liner"
+      {typeProductFilter?.map((typeProductFiltro) => (
+        <p
+          key={typeProductFiltro}
+          onClick={() => {
+            setTypeProdutct(typeProductFiltro);
+          }}
+        >
+          {typeProductFiltro === "lip_liner"
             ? "Delineador de lábios"
-            : typeProduct === "lipstick"
+            : typeProductFiltro === "lipstick"
             ? "Batom"
-            : typeProduct === "foundation"
+            : typeProductFiltro === "foundation"
             ? "Base"
-            : typeProduct === "eyeliner"
+            : typeProductFiltro === "eyeliner"
             ? "Delineador"
-            : typeProduct === "eyeshadow"
+            : typeProductFiltro === "eyeshadow"
             ? "Sombra"
-            : typeProduct === "blush"
+            : typeProductFiltro === "blush"
             ? "Blush"
-            : typeProduct === "bronzer"
+            : typeProductFiltro === "bronzer"
             ? "Bronzer"
-            : typeProduct === "mascara"
+            : typeProductFiltro === "mascara"
             ? "rímel"
-            : typeProduct === "eyebrow"
+            : typeProductFiltro === "eyebrow"
             ? "Lápis de sobrancelha"
-            : typeProduct === "nail_polish"
+            : typeProductFiltro === "nail_polish"
             ? "Esmalte"
-            : typeProduct}
+            : typeProductFiltro}
         </p>
       ))}
     </>

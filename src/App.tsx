@@ -1,15 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./Components/Header/Header";
 import { Porduto } from "./Components/Produto/Produto";
+import { ProductContextProvider } from "./Context/ContextProduct";
 
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Porduto />} />
-        </Routes>
+        <ProductContextProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Porduto />} />
+          </Routes>
+        </ProductContextProvider>
       </BrowserRouter>
     </>
   );

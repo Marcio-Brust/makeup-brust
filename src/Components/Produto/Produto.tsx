@@ -1,7 +1,11 @@
-import { useFetch } from "../../Ultils/Hooks/useFetch";
+import { ProductContext } from "../../Context/ContextProduct";
+import { useFetchTypes } from "../../Ultils/Hooks/useFetch";
+import { useContext } from "react";
 
 export const Porduto = () => {
-  const { data, isError, isLoading, error } = useFetch();
+  const { typeProduct } = useContext(ProductContext);
+
+  const { data, isError, isLoading, error } = useFetchTypes({ typeProduct });
 
   if (isLoading) {
     return <div>Loading</div>;
