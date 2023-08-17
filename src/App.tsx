@@ -13,6 +13,7 @@ import { Bronzer } from "./Components/Products/Pages/Bronzer";
 import { Mascara } from "./Components/Products/Pages/Mascara";
 import { Eyebrow } from "./Components/Products/Pages/Eyebrow";
 import { Nail_polish } from "./Components/Products/Pages/Nail_polish";
+import { Home } from "./Components/Home/Home";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <ProductContextProvider>
           <Header />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/lip_liner" element={<Lip_liner />} />
             <Route path="/lipstick" element={<Lipstick />} />
             <Route path="/foundation" element={<Foundation />} />

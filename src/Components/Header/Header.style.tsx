@@ -8,11 +8,9 @@ export const HeaderStyled = styled.header`
 
   div {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    height: 50px;
-    width: 1000px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 20px;
 
     a {
       text-decoration: none;
@@ -20,8 +18,7 @@ export const HeaderStyled = styled.header`
       padding: 6px 0px;
       color: #222;
       font-weight: 700;
-      font-size: 0.8rem;
-      margin: 0 auto;
+      font-size: 0.7rem;
       border-bottom: solid 1.5px transparent;
       transition: 0.5s;
 

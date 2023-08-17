@@ -32,18 +32,18 @@ export const SectionStyled = styled.section`
 
     h1 {
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
 
     p,
     span {
-      font-size: 0.875rem;
+      font-size: 0.7rem;
       margin-top: 10px;
       margin-bottom: 10px;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 10px 30px;
       font-weight: 700;
       font-size: 0.6rem;
       border: solid 2px #222;
