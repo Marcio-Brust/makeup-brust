@@ -11,7 +11,7 @@ export const SectionStyled = styled.section`
     margin: 0 auto;
     margin-top: 10px;
     grid-template-rows: 1fr 30px 30px;
-    width: 300px;
+    width: 200px;
     text-align: center;
     align-items: center;
     cursor: pointer;
@@ -45,7 +45,7 @@ export const SectionStyled = styled.section`
     button {
       padding: 15px 30px;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.6rem;
       border: solid 2px #222;
       background: ${({ theme }) => theme.background.secondary};
       cursor: pointer;

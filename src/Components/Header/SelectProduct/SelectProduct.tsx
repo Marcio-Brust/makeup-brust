@@ -20,7 +20,7 @@ export const SelectProduct = () => {
   }
 
   return (
-    <>
+    <div>
       {typeProductFilter?.map((typeProductFiltro) => (
         <Link
           to={`/${typeProductFiltro}`}
@@ -52,6 +52,6 @@ export const SelectProduct = () => {
             : typeProductFiltro}
         </Link>
       ))}
-    </>
+    </div>
   );
 };

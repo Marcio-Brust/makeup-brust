@@ -6,9 +6,7 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <Nav />
-      <div>
-        <SelectProduct />
-      </div>
+      <SelectProduct />
     </HeaderStyled>
   );
 };

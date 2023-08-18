@@ -1,9 +1,15 @@
 import { VscHeart } from "react-icons/vsc";
 import { useFetchEyeliner } from "../../../Ultils/Hooks/useFetch";
 import { SectionStyled } from "../Products.style";
+import { useContext } from "react";
+import { ProductContext } from "../../../Context/ContextProduct";
+import Logo from "../../../assets/Brust Makeupbgwhite.png";
 
 export const Eyeliner = () => {
   const { data, isError, isLoading, error } = useFetchEyeliner();
+
+    
+  const { typeProduct } = useContext(ProductContext);
 
   if (isLoading) {
     return <div>Loading</div>;
@@ -13,6 +19,25 @@ export const Eyeliner = () => {
   }
 
   return (
+    <>
+    <div
+      style={{ display: "flex", alignItems: "center", margin: "30px 20px" }}
+    >
+      <img
+        style={{ width: "200px", marginLeft: "30px" }}
+        src={Logo}
+        alt="img"
+      />
+      <h1
+        style={{
+          background: "#fff",
+          textAlign: "center",
+          marginLeft: "30%",
+        }}
+      >
+        {typeProduct ? "Delineador" : typeProduct}
+      </h1>
+    </div>
     <SectionStyled>
       {data?.map((product) => (
         <div key={product.id}>
@@ -32,5 +57,6 @@ export const Eyeliner = () => {
         </div>
       ))}
     </SectionStyled>
+  </>
   );
 };
