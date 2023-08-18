@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 interface colorsProps {
   hex_value: string;
-  olour_name: string;
+  colour_name: string;
 }
 export interface MakeupProps {
   id: number;
