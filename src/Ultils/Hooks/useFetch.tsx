@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { useEffect } from "react";
 
 interface colorsProps {
   hex_value: string;
@@ -11,7 +10,7 @@ export interface MakeupProps {
   name: string;
   price: string;
   image_link: string;
-  pi_featured_image: string;
+  api_featured_image: string;
   description: string;
   rating: number | null;
   category: string | null;
@@ -35,17 +34,112 @@ export const useFetch = () => {
   });
 };
 
-export const useFetchTypes = ({ typeProduct }: { typeProduct: string }) => {
-  useEffect(() => {
-    console.log(typeProduct);
-  }, [typeProduct]);
-
+export const useFetchLip_liner = () => {
   const fetchProductTypes = async (): Promise<MakeupProps[]> => {
-    const { data } = await axios.get(`${BASE_URL}?product_type=${typeProduct}`);
+    const { data } = await axios.get(`${BASE_URL}?product_type=lip_liner`);
     return data;
   };
 
-  return useQuery("productTypes", fetchProductTypes, {
+  return useQuery("productLip_liner", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchLipstick = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=lipstick`);
+    return data;
+  };
+
+  return useQuery("productLipstick", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchFoundation = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=foundation`);
+    return data;
+  };
+
+  return useQuery("productFoundation", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchEyeliner = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=eyeliner`);
+    return data;
+  };
+
+  return useQuery("productEyeliner", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchEyeshadow = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=eyeshadow`);
+    return data;
+  };
+
+  return useQuery("productEyeshadow", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchBlush = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=blush`);
+    return data;
+  };
+
+  return useQuery("productBlush", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchBronzer = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=bronzer`);
+    return data;
+  };
+
+  return useQuery("productBronzer", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchMascara = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=mascara`);
+    return data;
+  };
+
+  return useQuery("productMascara", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchEyebrow = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=eyebrow`);
+    return data;
+  };
+
+  return useQuery("productEyebrow", fetchProductTypes, {
+    refetchOnWindowFocus: false,
+  });
+};
+
+export const useFetchNail_polish = () => {
+  const fetchProductTypes = async (): Promise<MakeupProps[]> => {
+    const { data } = await axios.get(`${BASE_URL}?product_type=nail_polish`);
+    return data;
+  };
+
+  return useQuery("productNail_polish", fetchProductTypes, {
     refetchOnWindowFocus: false,
   });
 };

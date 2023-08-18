@@ -1,10 +1,10 @@
-import { Produtos } from "./Produtos/Produtos";
+import { SelectProduct } from "./SelectProduct/SelectProduct";
 
 export const Header = () => {
   return (
     <header>
       <div>
-        <Produtos />
+        <SelectProduct />
       </div>
     </header>
   );

@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { ProductContext } from "../../../Context/ContextProduct";
 import { useFetch } from "../../../Ultils/Hooks/useFetch";
 import { useContext } from "react";
 
-export const Produtos = () => {
+export const SelectProduct = () => {
   const { data, isError, isLoading, error } = useFetch();
 
   const { setTypeProdutct } = useContext(ProductContext);
@@ -11,6 +12,7 @@ export const Produtos = () => {
     ?.map((product) => product.product_type)
     .filter((product, index, self) => self.indexOf(product) === index);
 
+  console.log(typeProductFilter);
   if (isLoading) {
     return <div>Loading</div>;
   }
@@ -21,7 +23,8 @@ export const Produtos = () => {
   return (
     <>
       {typeProductFilter?.map((typeProductFiltro) => (
-        <p
+        <Link
+          to={`/${typeProductFiltro}`}
           key={typeProductFiltro}
           onClick={() => {
             setTypeProdutct(typeProductFiltro);
@@ -48,7 +51,7 @@ export const Produtos = () => {
             : typeProductFiltro === "nail_polish"
             ? "Esmalte"
             : typeProductFiltro}
-        </p>
+        </Link>
       ))}
     </>
   );
