@@ -1,16 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./Components/Header/Header";
-import { Lip_liner } from "./Components/Products/Lip_liner";
+
 import { ProductContextProvider } from "./Context/ContextProduct";
-import { Lipstick } from "./Components/Products/Lipstick";
-import { Foundation } from "./Components/Products/Foundation";
-import { Eyeliner } from "./Components/Products/Eyeliner";
-import { Eyeshadow } from "./Components/Products/Eyeshadow";
-import { Blush } from "./Components/Products/Blush";
-import { Bronzer } from "./Components/Products/Bronzer";
-import { Mascara } from "./Components/Products/Mascara";
-import { Eyebrow } from "./Components/Products/Eyebrow";
-import { Nail_polish } from "./Components/Products/Nail_polish";
+
+import { Blush } from "./Components/Products/Pages/Blush";
+import { Lip_liner } from "./Components/Products/Pages/Lip_liner";
+import { Lipstick } from "./Components/Products/Pages/Lipstick";
+import { Foundation } from "./Components/Products/Pages/Foundation";
+import { Eyeliner } from "./Components/Products/Pages/Eyeliner";
+import { Eyeshadow } from "./Components/Products/Pages/Eyeshadow";
+import { Bronzer } from "./Components/Products/Pages/Bronzer";
+import { Mascara } from "./Components/Products/Pages/Mascara";
+import { Eyebrow } from "./Components/Products/Pages/Eyebrow";
+import { Nail_polish } from "./Components/Products/Pages/Nail_polish";
 
 function App() {
   return (

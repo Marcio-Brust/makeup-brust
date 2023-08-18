@@ -7,8 +7,10 @@ interface colorsProps {
 }
 export interface MakeupProps {
   id: number;
+  brand: string;
   name: string;
   price: string;
+  price_sign: string;
   image_link: string;
   api_featured_image: string;
   description: string;

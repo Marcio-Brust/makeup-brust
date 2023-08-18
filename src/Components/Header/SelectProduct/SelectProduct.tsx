@@ -12,7 +12,6 @@ export const SelectProduct = () => {
     ?.map((product) => product.product_type)
     .filter((product, index, self) => self.indexOf(product) === index);
 
-  console.log(typeProductFilter);
   if (isLoading) {
     return <div>Loading</div>;
   }
@@ -45,7 +44,7 @@ export const SelectProduct = () => {
             : typeProductFiltro === "bronzer"
             ? "Bronzer"
             : typeProductFiltro === "mascara"
-            ? "rímel"
+            ? "Rímel"
             : typeProductFiltro === "eyebrow"
             ? "Lápis de sobrancelha"
             : typeProductFiltro === "nail_polish"
