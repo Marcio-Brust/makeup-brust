@@ -10,7 +10,7 @@ export const Nav = () => {
         <VscMenu />
       </button>
       <div>
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo"  />
       </div>
       <Ul />
     </NavStyled>

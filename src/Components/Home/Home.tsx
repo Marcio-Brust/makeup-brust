@@ -7,6 +7,10 @@ import Logo from "../../assets/Brust Makeupbgwhite.png";
 export const Home = () => {
   const { data, isLoading, isError, error } = useFetch();
 
+
+
+  
+
   if (isLoading) {
     return <div>Loading</div>;
   }
