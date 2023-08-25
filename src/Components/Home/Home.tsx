@@ -1,4 +1,3 @@
-import React from "react";
 import { HomeStyled } from "./Home.style";
 import { useFetch } from "../../Ultils/Hooks/useFetch";
 import { VscHeart } from "react-icons/vsc";
@@ -6,10 +5,6 @@ import Logo from "../../assets/Brust Makeupbgwhite.png";
 
 export const Home = () => {
   const { data, isLoading, isError, error } = useFetch();
-
-
-
-  
 
   if (isLoading) {
     return <div>Loading</div>;
